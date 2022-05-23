@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Njy-fz-WcV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--hello-->
+        <scene sceneID="34R-Q9-XBz">
+            <objects>
+                <viewController id="AKh-IH-tuP" customClass="NoteListController" customModule="MegaNotes" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nhs-Ut-Z3X" customClass="NoteListView" customModule="MegaNotes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nTm-lc-eQs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="atE-j9-gfL">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="noteCell" id="PTJ-8r-ert" customClass="NoteCellView" customModule="MegaNotes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="upI-Rj-Fl1">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="CTk-r3-SBi" appends="YES" id="V4i-m1-pCv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpD-2q-i0Z">
+                                <rect key="frame" x="284" y="752" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.94328004121780396" green="0.48725975138956085" blue="0.016843715505474449" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="A5y-DL-SLv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="eOA-00-g1K"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large" weight="medium"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newNoteButtonAction:" destination="AKh-IH-tuP" eventType="touchUpInside" id="R4d-0h-dlq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QxY-xQ-lVS"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nTm-lc-eQs" secondAttribute="bottom" id="3Fb-wL-QcQ"/>
+                            <constraint firstItem="nTm-lc-eQs" firstAttribute="leading" secondItem="QxY-xQ-lVS" secondAttribute="leading" id="FOc-Tn-OF1"/>
+                            <constraint firstItem="QxY-xQ-lVS" firstAttribute="trailing" secondItem="nTm-lc-eQs" secondAttribute="trailing" id="Tke-Bf-yc6"/>
+                            <constraint firstItem="QxY-xQ-lVS" firstAttribute="bottom" secondItem="HpD-2q-i0Z" secondAttribute="bottom" constant="40" id="UIy-Tm-JYy"/>
+                            <constraint firstItem="QxY-xQ-lVS" firstAttribute="trailing" secondItem="HpD-2q-i0Z" secondAttribute="trailing" constant="60" id="Urf-so-d45"/>
+                            <constraint firstItem="nTm-lc-eQs" firstAttribute="top" secondItem="QxY-xQ-lVS" secondAttribute="top" id="jus-Fa-yBZ"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="newNoteButton" destination="HpD-2q-i0Z" id="tLJ-AP-Nf4"/>
+                            <outlet property="noteCollection" destination="nTm-lc-eQs" id="Hse-ZO-1Bf"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="hello" largeTitleDisplayMode="always" id="syD-XF-z5V">
+                        <barButtonItem key="leftBarButtonItem" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" id="h0a-bt-bA2"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRf-iM-hY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.40000000000000002" id="CTk-r3-SBi">
+                    <connections>
+                        <action selector="deleteNoteAction:" destination="AKh-IH-tuP" id="0iH-ZK-2Pb"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2730.434782608696" y="-418.52678571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CpV-8K-1jx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Njy-fz-WcV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zrO-eN-dLo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AKh-IH-tuP" kind="relationship" relationship="rootViewController" id="OBn-Vd-d5D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KU0-GA-BWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.7391304347827" y="-419.19642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
