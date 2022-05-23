@@ -30,7 +30,7 @@ class NoteCellView: UICollectionViewCell {
         self.backgroundColor = .blue
         let xibView = loadViewFromXib()
         xibView.frame = self.bounds
-//        xibView.isHidden = true
+        xibView.isHidden = true
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         xibView.layer.cornerRadius = 30
         self.addSubview(xibView)
